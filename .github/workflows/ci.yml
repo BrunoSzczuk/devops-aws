@@ -54,7 +54,7 @@ jobs:
     needs: release
     strategy:
       matrix:
-        instance-id: ['i-02c9401d6cd61852b']
+        instance-id: ['i-i-0aff07e62343a2d87']
     
     steps:
       - name: Install AWS CLI
@@ -74,6 +74,6 @@ jobs:
         run: |
           aws ssm send-command \
           --document-name "AWS-RunShellScript" \
-          --instance-ids i-02c9401d6cd61852b \
+          --instance-ids i-i-0aff07e62343a2d87 \
           --parameters commands="cd /home/ubuntu && sudo docker-compose up -d" \
           --region us-east-1 --output text
