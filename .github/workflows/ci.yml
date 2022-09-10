@@ -38,7 +38,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ secrets.DOCKERHUB_USERNAME }}/ec2-hello-page
+          images: ${{ secrets.DOCKERHUB_USERNAME }}/ec2-hello
 
       - name: Build and push
         uses: docker/build-push-action@v3
@@ -54,7 +54,7 @@ jobs:
     needs: release
     strategy:
       matrix:
-        instance-id: ['i-0db9f96d9bc6f41bc']
+        instance-id: ['i-02c9401d6cd61852b']
     
     steps:
       - name: Install AWS CLI
