@@ -20,7 +20,7 @@ jobs:
           java-version: '11'
 
       - name: Compile
-        run: ./gradlew compile
+        run: ./gradlew compileKotlin
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
